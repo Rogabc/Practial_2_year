@@ -37,9 +37,9 @@
 
         </div>
 
-        <div class="cart-total">
+        <div class="cart-total" >
 
-            <strong>Total: €0.00</strong>
+            <strong id ="cart-total-sum">Total: €0.00</strong>
         </div>
 
         <button class="checkout" onclick="openCheckout()">Pasūtīt</button>
@@ -52,12 +52,13 @@
         <h2>Piegādes informācija</h2>
 
         <form id="deliveryForm">
-            <input type="text" placeholder="Vārds, Uzvārds" required><br><br>
-            <input type="text" placeholder="Adrese" required><br><br>
-            <input type="text" placeholder="Pasta indekss" required><br><br>
-            <input type="text" placeholder="Pilsēta" required><br><br>
-            <input type="tel" placeholder="Telefona numurs" required><br><br>
-            <button class="checkout">Apstiprināt pasūtījumu</button>
+            <input type="text" id="name" placeholder="Vārds, Uzvārds" required><br><br>
+            <input type="text" id="address" placeholder="Adrese" required><br><br>
+            <input type="text" id="postalIndex" placeholder="Pasta indekss" required><br><br>
+            <input type="text" id="town"placeholder="Pilsēta" required><br><br>
+            <input type="tel" id="phone" placeholder="Telefona numurs" required><br><br>
+            <input type="text" id="email"placeholder="E-pasts" required><br><br>
+            <button class="checkout" onclick="Confirm()">Apstiprināt pasūtījumu</button>
         </form>
     </div>
 </div>

@@ -2,69 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Boltow dieni</title>
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
 
+<div class="wrapper">
 
-
-<div class="category-buttons">
-  <button class="Food-category" data-category="Fast Food">Ātrā ēdināšana</button>
-  <button class="Food-category" data-category="Italian">Picas un itāļu virtuve</button>
-  <button class="Food-category" data-category="Asian">Āzijas virtuve</button>
-  <button class="Food-category" data-category="Mexican">Meksikāņu</button>
-  <button class="Food-category" data-category="Meat">Gaļas</button>
-</div>
-
-
-
-
-<div class="menu-container" id="menuContainer">
-
-</div>
-
-<button class="Cart" onclick="openCart()">🛒 grozs</button>
-
-
-<div class="modal" id="cartModal">
-    <div class="modal-content">
-        <span class="close" onclick="closeCart()">&times;</span>
-        <h2>Pirkumu Grozs</h2>
-
-        <div class="CartItems">
-
+    <div class="header">
+        <div class="logo">
+            <h1>Boltow</h1>
         </div>
+    </div>
 
-        <div class="cart-total" >
+    <div class="category-buttons">
+        <button class="Food-category" data-category="fast-food">Ātrā ēdināšana</button>
+        <button class="Food-category" data-category="italian">itāļu <br> virtuve</button>
+        <button class="Food-category" data-category="asian">Āzijas virtuve</button>
+        <button class="Food-category" data-category="mexican">Meksikāņu virtuve</button>
+        <button class="Food-category" data-category="meat">Gaļas virtuve</button>
+        <button class="Food-category" data-category=>Visas virtuves</button>
+        <button class="Cart" onclick="openCart()">🛒 grozs</button>
+    </div>
 
-            <strong id ="cart-total-sum">Total: €0.00</strong>
+
+
+    <div class="menu-container" id="menuContainer">
+
+    </div>
+
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Pirkumu Grozs</h2>
+
+            <div class="cart-container">
+
+            </div>
+
+            <div class="cart-total" >
+                <strong id ="cart-total-sub">Bez pvn: €0.00</strong><br>
+                <strong id ="cart-total-pvn">Ar pvn: €0.00</strong>
+            </div>
+
+            <button class="checkout" onclick="openCheckout()">Pasūtīt</button>
         </div>
-
-        <button class="checkout" onclick="openCheckout()">Pasūtīt</button>
     </div>
-</div>
 
-<div class="modal" id="deliveryModal">
-    <div class="modal-content">
-        <span class="close" onclick="closeDelivery()">&times;</span>
-        <h2>Piegādes informācija</h2>
+    <div class="modal" id="deliveryModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDelivery()">&times;</span>
+            <h2>Piegādes informācija</h2>
 
-        <form id="deliveryForm">
-            <input type="text" id="name" placeholder="Vārds, Uzvārds" required><br><br>
-            <input type="text" id="address" placeholder="Adrese" required><br><br>
-            <input type="text" id="postalIndex" placeholder="Pasta indekss" required><br><br>
-            <input type="text" id="town"placeholder="Pilsēta" required><br><br>
-            <input type="tel" id="phone" placeholder="Telefona numurs" required><br><br>
-            <input type="text" id="email"placeholder="E-pasts" required><br><br>
-            <button class="checkout" onclick="Confirm()">Apstiprināt pasūtījumu</button>
-        </form>
+            <form id="deliveryForm">
+                <input type="text" id="name" placeholder="Vārds, Uzvārds" required><br><br>
+                <input type="text" id="address" placeholder="Adrese" required><br><br>
+                <input type="text" id="postalIndex" placeholder="Pasta indekss" required><br><br>
+                <input type="text" id="town" placeholder="Pilsēta" required><br><br>
+                <input type="tel" id="phone" placeholder="Telefona numurs" required><br><br>
+                <input type="text" id="email" placeholder="E-pasts" required><br><br>
+                <button class="checkout" onclick="Confirm()">Apstiprināt pasūtījumu</button>
+            </form>
+        </div>
     </div>
+
+    <div class="footer">
+        <div class="logo">
+            <h1>Boltow</h1>
+        </div>
+        <div class="copyright">© Boltow 2025 visas tiesības ir aizsargātas</div>
+    </div>
+
 </div>
-
-
-
 
 <script src="templates.js"></script>
 <script src="main.js"></script>

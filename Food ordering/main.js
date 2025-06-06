@@ -36,7 +36,6 @@ function Confirm() {
         const UserData = {
             name: document.getElementById("name").value,
             address: document.getElementById("address").value,
-            postalIndex: document.getElementById("postalIndex").value,
             town: document.getElementById("town").value,
             phone: document.getElementById("phone").value,
             email: document.getElementById("email").value
@@ -49,20 +48,16 @@ function Confirm() {
             return;
         }
 
-        if(!isValidPIndex(UserData.address)){
-            alert("Nederīgs pasta indeks.")
-            return
-        }
 
-        if(!isValidTown(UserData.town)){
+        else if(!isValidTown(UserData.town)){
             alert("Nederīga pilsēta.")
         }
-        if (!isValidEmail(UserData.email)) {
+        else if (!isValidEmail(UserData.email)) {
             alert("Nederīgs e-pasts");
             return;
         }
 
-        if (!isValidPhone(UserData.phone)) {
+        else if (!isValidPhone(UserData.phone)) {
             alert("Nederīgs telefona numurs.");
             return;
         }
@@ -74,10 +69,6 @@ function Confirm() {
         }
     })
 
-    function isValidPIndex(pIndex){
-        const pIndexRegex = /^LV-\d{4}$|^\d{4}$/;
-        return pIndexRegex.test(pIndex);
-    }
 
     function isValidTown(Town){
         const TownRegex = /^[A-Za-zĀāĒēĪīŪūĶķĻļĢģŅņŠšŽžČč\- ]+$/;
@@ -85,7 +76,7 @@ function Confirm() {
     }
 
     function isValidName(name) {
-        const nameRegex = /^[A-Za-zĀāĒēĪīŪūĶķĻļĢģŅņŠšŽžČč\-]+$/; //izņem simbolus un ciparus no vārda
+        const nameRegex = /^[A-Za-zĀāĒēĪīŪūĶķĻļĢģŅņŠšŽžČč\-\s]+$/; //izņem simbolus un ciparus no vārda
         return nameRegex.test(name);
     }
 
@@ -98,6 +89,8 @@ function Confirm() {
         const phoneRegex = /^(\+371)?\d{8}$/;// neprasiet man kā strādā regex
         return phoneRegex.test(phone);
     }
+
+    closeDelivery()
 }
 
 
@@ -119,7 +112,7 @@ const templates =[
             name: "Klasiskais burgeris",
             desc: "Sulīgs liellopa gaļas burgers ar sieru, tomātiem un mājas mērci.",
             price: 6.50,
-            image: "",
+            image: "Images/b3.jpg",
             category: "fast-food",
             id: 1
         },
@@ -127,7 +120,7 @@ const templates =[
             name: "Vistas nageti",
             desc: "Kraukšķīgi vistas gabaliņi ar mērcīti pēc izvēles.",
             price: 4.20,
-            image: "",
+            image: "Images/v4.jpg",
             category: "fast-food",
             id: 2
         },
@@ -135,7 +128,7 @@ const templates =[
             name: "Čīzburgers",
             desc: "Klasisks burgers ar kausētu sieru, gurķiem un kečupu.",
             price: 5.00,
-            image: "",
+            image: "Images/b5.jpg",
             category: "fast-food",
             id: 3
         },
@@ -143,7 +136,7 @@ const templates =[
             name: "Fri kartupeļi",
             desc: "Zeltaini, kraukšķīgi kartupeļi ar sāli.",
             price: 2.50,
-            image: "",
+            image: "Images/f6.jpg",
             category: "fast-food",
             id: 4
         },
@@ -151,7 +144,7 @@ const templates =[
             name: "Hotdogs ar cīsiņu",
             desc: "Maizītē cepts cīsiņš ar sinepēm un kečupu.",
             price: 3.00,
-            image: "",
+            image: "Images/h7.jpg",
             category: "fast-food",
             id: 5
         },
@@ -177,7 +170,7 @@ const templates =[
             name:"Rigatoni ar Boloņas mērci",
             desc:"Dobās makaroni bagātīgā, lēni gatavotā liellopa un tomātu mērcē.",
             price: 5.50,
-            image:"",
+            image:"Images/m8.jpg",
             category: "italian",
             id: 8
         },
@@ -185,7 +178,7 @@ const templates =[
             name:"Penne ar pikanto tomātu mērci",
             desc:"Īsi makaroni ar pikantu ķiploku-tomātu mērci un čili pārslām.",
             price: 5.00,
-            image:"",
+            image:"Images/m9.jpg",
             category: "italian",
             id: 9
         },
@@ -193,7 +186,7 @@ const templates =[
             name:"Fusilli ar sēņu mērci",
             desc:"Vītņveida makaroni krēmīgā sēņu mērcē ar aromātiskiem garšaugiem.",
             price: 5.80,
-            image:"",
+            image:"Images/m10.jpg",
             category: "italian",
             id: 10
         },
@@ -203,7 +196,7 @@ const templates =[
             name: "Ramen nūdeles ar vistu",
             desc: "Japāņu buljona zupa ar nūdelēm, vārītu olu un vistas gaļu.",
             price: 7.50,
-            image: "",
+            image: "Images/r11.jpg",
             category: "asian",
             id: 11
         },
@@ -211,7 +204,7 @@ const templates =[
             name: "Ceptas nūdeles ar dārzeņiem",
             desc: "Sojas mērcē ceptas nūdeles ar svaigiem dārzeņiem.",
             price: 6.00,
-            image: "",
+            image: "Images/n12.jpg",
             category: "asian",
             id: 12
         },
@@ -219,7 +212,7 @@ const templates =[
             name: "Terijaki vistas bļoda",
             desc: "Grilēta vistas fileja ar terijaki mērci un rīsiem.",
             price: 7.00,
-            image: "",
+            image: "Images/t13.jpg",
             category: "asian",
             id: 13
         },
@@ -227,7 +220,7 @@ const templates =[
             name: "Saldskābā cūkgaļa",
             desc: "Kraukšķīga cūkgaļa saldskābā mērcē ar ananāsiem.",
             price: 7.20,
-            image: "",
+            image: "Images/c14.jpg",
             category: "asian",
             id: 14
         },
@@ -235,7 +228,7 @@ const templates =[
             name: "Sushi komplekts (8 gab.)",
             desc: "Svaigs suši izlase ar lašu, gurķi un krēmsieru.",
             price: 8.50,
-            image: "",
+            image: "Images/s15.jpg",
             category: "asian",
             id: 15
         },
@@ -245,7 +238,7 @@ const templates =[
             name: "Tako ar liellopu gaļu",
             desc: "Kraukšķīgs tako ar maltu gaļu, sieru un salsu.",
             price: 5.20,
-            image: "",
+            image: "Images/t16.jpg",
             category: "mexican",
             id: 16
         },
@@ -253,7 +246,7 @@ const templates =[
             name: "Quesadilla ar sieru",
             desc: "Apcepta tortilja ar izkusušu sieru un dārzeņiem.",
             price: 4.80,
-            image: "",
+            image: "Images/q17.jpg",
             category: "mexican",
             id: 17
         },
@@ -261,7 +254,7 @@ const templates =[
             name: "Burrito ar vistas gaļu",
             desc: "Lielā tortilja ar rīsiem, pupiņām un grilētu vistas fileju.",
             price: 6.70,
-            image: "",
+            image: "Images/b18.jpg",
             category: "mexican",
             id: 18
         },
@@ -269,7 +262,7 @@ const templates =[
             name: "Nachos ar sieru un salsu",
             desc: "Kraukšķīgas tortiljas ar izkusušu sieru un mājās gatavotu salsu.",
             price: 4.30,
-            image: "",
+            image: "Images/n19.jpg",
             category: "mexican",
             id: 19
         },
@@ -277,7 +270,7 @@ const templates =[
             name: "Fajita ar cūkgaļu",
             desc: "Tortilja ar ceptu cūkgaļu, papriku un sīpoliem.",
             price: 6.20,
-            image: "",
+            image: "Images/f20.jpg",
             category: "mexican",
             id: 20
         },
@@ -287,7 +280,7 @@ const templates =[
             name: "Grilēts liellopa steiks",
             desc: "Sulīgs steiks ar sviesta garšvielām un ceptiem kartupeļiem.",
             price: 12.00,
-            image: "",
+            image: "Images/g21.jpg",
             category: "meat",
             id: 21
         },
@@ -295,7 +288,7 @@ const templates =[
             name: "Cepta cūkgaļas karbonāde",
             desc: "Tradicionāla karbonāde ar marinētiem kāpostiem un kartupeļiem.",
             price: 9.50,
-            image: "",
+            image: "Images/c22.jpg",
             category: "meat",
             id: 22
         },
@@ -303,7 +296,7 @@ const templates =[
             name: "Vistas fileja BBQ mērcē",
             desc: "Grilēta vistas fileja ar BBQ mērci un dārzeņu piedevu.",
             price: 8.70,
-            image: "",
+            image: "Images/v23.jpg",
             category: "meat",
             id: 23
         },
@@ -311,7 +304,7 @@ const templates =[
             name: "Liellopa frikadeles mērcē",
             desc: "Mājās gatavotas frikadeles tomātu mērcē ar kartupeļu biezeni.",
             price: 7.60,
-            image: "",
+            image: "Images/f24.jpg",
             category: "meat",
             id: 24
         },
@@ -319,17 +312,22 @@ const templates =[
             name: "Cepti vistas spārniņi",
             desc: "Asie spārniņi ar mērču izlasi un seleriju.",
             price: 6.90,
-            image: "",
+            image: "Images/c25.jpg",
             category: "meat",
             id: 25
         }
 ]
 
-function FoodCategory(category) {
-    console.log("Izvēlētā kategorijal", category);
-}
 
+
+const container = document.getElementById("menuContainer");
+
+
+let filteredTemplates = [];
 let selectedCategory = null
+let currentCategory = null;
+
+
 document.querySelectorAll(".Food-category").forEach(button =>{
     button.addEventListener("click", () =>{
         selectedCategory = button.dataset.category;
@@ -338,7 +336,6 @@ document.querySelectorAll(".Food-category").forEach(button =>{
             selectedCategory = null;
         }
 
-        FoodCategory(selectedCategory);
         renderMenu();
     });
 });
@@ -349,36 +346,53 @@ document.querySelectorAll(".Food-category").forEach(button =>{
 //uztaisa modularu resti preks katra produkta
 function renderMenu() {
 
-    const container = document.getElementById("menuContainer");
-    container.innerHTML = "";
+    if (selectedCategory !== currentCategory || filteredTemplates.length === 0) {
+        currentCategory = selectedCategory;
 
-    const filteredTemplates = templates.filter(item => {
-
-        if(selectedCategory === null){
-            console.log("all");
-            return true;
+        if (selectedCategory === null) {
+            filteredTemplates = templates; // No filtering needed
+        } else {
+            filteredTemplates = templates.filter(item => item.category === selectedCategory);
         }
-        console.log(item.category);
-        return item.category === selectedCategory;
-    })
-    filteredTemplates.forEach(item => {
+    }
+
+    container.innerHTML = "";
+    const templateCount = filteredTemplates.length;
+    // Use document fragment to minimize DOM manipulation
+    const fragment = document.createDocumentFragment();
+
+    // Loop with cached length
+    for (let i = 0; i < templateCount; i++) {
+        const item = filteredTemplates[i];
+
+        // Create card element
         const card = document.createElement("div");
         card.className = "food-card";
-        card.innerHTML = `
-      <img src="${item.image}" alt="${item.name}">
-      <h3>${item.name}</h3>
-      <p>${item.desc}</p>
-      <div class="price">€${item.price.toFixed(2)}</div>
-      <span class="add-to-cart" data-id="${item.id}">Add to Cart</span>
-    `;
 
+        // Use template literals efficiently
+        card.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" loading="lazy">
+            <h3>${item.name}</h3>
+            <p>${item.desc}</p>
+            <div class="price">€${item.price.toFixed(2)}</div>
+            <span class="add-to-cart" data-id="${item.id}">Pievienot Grozam</span>
+        `;
+
+        // Add event listener efficiently
         const btn = card.querySelector(".add-to-cart");
         btn.addEventListener("click", () => addToCart(item));
-        container.appendChild(card);
-    });
+
+        // Append to fragment instead of DOM
+        fragment.appendChild(card);
+    }
+
+    // Single DOM update
+    container.appendChild(fragment);
 }
 
-renderMenu();
+setTimeout(() => {
+    renderMenu();
+}, 100);
 
 function addToCart(item){
     cart.push(item);

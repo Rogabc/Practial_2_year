@@ -1,23 +1,18 @@
-
 body{
     background-color: rgba(40, 167, 69, 0.2);
     font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
 }
 
-
-
-/*Izveido režģi ar parametriem cik talu kas ir */
 .menu-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px 0;
-
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
 }
 
 .food-card {
     border: 1px solid black;
-    padding: 15px;
+    padding: 1rem;
     background-color: rgba(40, 167, 69, 0.5);
     z-index: 500;
     border-radius: 8px;
@@ -27,27 +22,29 @@ body{
 
 .food-card img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
     object-position: center;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 0.75rem;
 }
-
 
 .food-card h3 {
     color: rgba(47, 49, 63, 1.0);
-    margin: 5px 0;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
 }
 
 .food-card p {
     color: rgba(47, 49, 63, 1.0);
-    margin: 5px 0;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .food-card .price {
-    margin: 5px 0;
-    font-size: 24px;
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
     font-weight: bold;
     color: rgba(47, 49, 63, 1.0);
     toFixed: 2;
@@ -56,35 +53,38 @@ body{
 
 .food-card span {
     font-family: inherit;
-    background-image: url('./Images/YB.jpg');
+    background-image: linear-gradient(to bottom right, #fff100, #ae9201);
     background-size: cover;
     background-repeat: no-repeat;
-    color: #333; /* Dark text for contrast */
-    padding: 5px 20px;
+    color: #333;
+    padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 8px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     text-align: center;
-    height: 25px;
+    min-height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .food-card span:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/*izveido pirkuma groza funkcionalitati*/
 .Cart {
     font-family: inherit;
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 0.75rem 1rem;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .Cart:hover {
@@ -104,10 +104,10 @@ body{
 
 .modal-content{
     background-color: white;
-    margin: 10% auto;
-    padding: 20px;
+    margin: 5% auto;
+    padding: 1.5rem;
     border-radius: 8px;
-    width: 80%;
+    width: 90%;
     max-width: 500px;
     position: relative;
 }
@@ -116,7 +116,7 @@ body{
     position: absolute;
     top: 10px;
     right: 15px;
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: bold;
     cursor: pointer;
     color: #aaa;
@@ -126,35 +126,31 @@ body{
     color: #000;
 }
 
-
-
-
 .cart-header {
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
     border-bottom: 2px solid #eee;
 }
 
-
 .cart-items {
     min-height: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
 }
 
 .cart-total {
     text-align: right;
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
 }
 
 .checkout{
     width: 100%;
-    padding: 12px;
+    padding: 0.75rem;
     background-color: #28a745;
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -162,18 +158,16 @@ body{
     background-color: #218838;
 }
 
-
 .wrapper {
     margin: 0 auto;
-    padding: 0px;
-    width: 960px;
-
+    padding: 0;
+    max-width: 1200px;
+    width: 100%;
 }
 
-
 .header {
-    width: 960px;
-    height:126px;
+    width: 100%;
+    height: 100px;
     padding: 0;
     background-color: #28a745;
     clear: both;
@@ -181,11 +175,12 @@ body{
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(40, 167, 69, 0.3);
     position: relative;
+    margin-bottom: 1rem;
 }
 
 .footer{
-    width: 960px;
-    height:126px;
+    width: 100%;
+    height: 100px;
     padding: 0;
     background-color: #28a745;
     clear: both;
@@ -193,6 +188,7 @@ body{
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(40, 167, 69, 0.3);
     position: relative;
+    margin-top: 2rem;
 }
 
 .copyright{
@@ -200,7 +196,7 @@ body{
     bottom: 10px;
     left: 50%;
     transform: translate(-50%);
-    font-size: 11px;
+    font-size: 0.7rem;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -215,7 +211,7 @@ body{
 }
 
 .logo h1 {
-    font-size: 48px;
+    font-size: 2.5rem;
     margin: 0;
     font-weight: 700;
     letter-spacing: -1px;
@@ -223,26 +219,28 @@ body{
 }
 
 .category-buttons {
-    margin-top: 5px ;
+    margin: 1rem 0;
     display: flex;
     justify-content: space-between;
-    flex-wrap: nowrap;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0 1rem;
 }
 
 .Food-category {
     font-family: inherit;
-    background-image: url('./Images/YB.jpg');
+    background-image: linear-gradient(to bottom right, #fff700, #ffd700);
     background-size: cover;
     background-repeat: no-repeat;
     color: #333;
-    padding: 5px 20px;
+    padding: 0.75rem 1rem;
     border: none;
     border-radius: 8px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 0.9rem;
     cursor: pointer;
-    flex: 1 1 150px;
+    flex: 1 1 auto;
+    min-width: 120px;
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -254,9 +252,8 @@ body{
 
 .cart-container{
     max-height: 300px;
-    overflow-y: auto;  /* Enable vertical scrolling */
-    overflow-x: hidden; /* Hide horizontal scrollbar if not needed */
-
+    overflow-y: auto;
+    overflow-x: hidden;
     scrollbar-width: thin;
     scrollbar-color: #888 #f1f1f1;
 }
@@ -265,14 +262,14 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 0.75rem;
     border-bottom: 1px solid #eee;
 }
 
 .remove-item{
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     cursor: pointer;
     color: #aaa;
@@ -280,4 +277,88 @@ body{
 
 .remove-item:hover{
     color: #000;
+}
+
+/* Mobile First Media Queries */
+@media (max-width: 480px) {
+    .menu-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .category-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .Food-category {
+        min-width: 100%;
+        font-size: 1rem;
+    }
+
+    .logo h1 {
+        font-size: 1.8rem;
+    }
+
+    .food-card {
+        padding: 0.75rem;
+    }
+
+    .food-card img {
+        height: 150px;
+    }
+
+    .modal-content {
+        margin: 10% auto;
+        padding: 1rem;
+        width: 95%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .menu-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .category-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .Food-category {
+        flex: 1 1 calc(50% - 0.25rem);
+        min-width: 140px;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .header {
+        height: 126px;
+    }
+
+    .footer {
+        height: 126px;
+    }
+
+    .logo h1 {
+        font-size: 3rem;
+    }
+
+    .category-buttons {
+        flex-wrap: nowrap;
+        gap: 1rem;
+    }
+
+    .Food-category {
+        flex: 1 1 150px;
+        font-size: 1rem;
+    }
 }
